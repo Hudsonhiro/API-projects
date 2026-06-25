@@ -1,0 +1,6 @@
+# Ignorar arquivos de teste com chaves
+teste_chave.py
+
+#ignorar arquivos temporários do Python e do sistema
+__pycache__/
+*.swp
