@@ -32,7 +32,7 @@ def gerar_email():
             contents=usuario_mensagem,
             config=types.GenerateContentConfig(
                 system_instruction=instrucao_sistema,
-                temperature=0.7,
+                temperature=0.2,
             )
         )
 
