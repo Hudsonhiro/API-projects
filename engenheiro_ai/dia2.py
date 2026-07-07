@@ -3,7 +3,8 @@ from google import genai
 
 def gerar_resumo():
     # 1. Inicializa o cliente (ele busca automaticamente a variável GEMINI_API_KEY)
-    client = genai.Client(api_key="AQ.Ab8RN6KL7n_VK6GZWTFbnuHVSu8edhSKtThfEd7OnHnpMXkQ0")
+    MINHA_CHAVE = os.environ.get("GEMINI_API_KEY", "SUA_CHAVE_AQUI")
+    client = genai.Client(api_key=MINHA_CHAVE)
 
     print("=== Gerador de Resumos IA ===")
     
