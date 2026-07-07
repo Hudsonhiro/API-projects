@@ -1,8 +1,10 @@
+import os
+
 from google import genai
 from google.genai import types
 
 def gerar_email():
-    MINHA_CHAVE = "AQ.Ab8RN6KjonvuE8yfEMN8UpPoFTZGPiLBwjnhO_F4SKjmnbCzeA"
+    MINHA_CHAVE = os.environ.get("GEMINI_API_KEY", "SUA_CHAVE_AQUI")
     client = genai.Client(api_key=MINHA_CHAVE)
 
     print("=== Formatador de E-mails inteligentes===")

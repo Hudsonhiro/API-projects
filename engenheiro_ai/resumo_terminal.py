@@ -2,7 +2,7 @@ import os
 from google import genai
 
 def gerar_resumo():
-    MINHA_CHAVE = "AQ.Ab8RN6KjonvuE8yfEMN8UpPoFTZGPiLBwjnhO_F4SKjmnbCzeA"
+    MINHA_CHAVE = os.environ.get("GEMINI_API_KEY", "SUA_CHAVE_AQUI")
 
     client = genai.Client(api_key=MINHA_CHAVE)
 
@@ -28,3 +28,5 @@ def gerar_resumo():
 
 if __name__ == "__main__":
     gerar_resumo()      
+
+    print("\nResumo gerado com sucesso! Obrigado por usar o Gerador de Resumos IA.")
