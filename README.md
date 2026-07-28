@@ -1,49 +1,36 @@
-# 🤖 Gemini API: Projetos & Arquitetura de IA (Portfólio de Estudos)
+# 🤖 Gemini AI Engineering Hub
 
-Este repositório reúne um ecossistema de ferramentas, scripts e microsserviços desenvolvidos em **Python** utilizando a nova **Google GenAI SDK**. O objetivo principal deste ecossistema é demonstrar a aplicação prática de engenharia de software e arquitetura robusta voltada para Inteligência Artificial Generativa.
+Uma suíte completa de aplicações e técnicas de **Engenharia de IA** e integração com **LLMs**, utilizando a SDK oficial da **Google GenAI** e interface gráfica interativa em **Streamlit**.
 
-O portfólio evoluiu de scripts de automação simples para sistemas contínuos e resilientes, aplicando conceitos modernos de segurança e controle determinístico de LLMs (Large Language Models).
-
----
-
-## 🎯 Projetos em Destaque
-
-### 1. 🛡️ Moderador de Conteúdo Estrito (`moderador_comentarios.py`)
-Um sistema de moderação automática para e-commerce que analisa o *input* de utilizadores em tempo real para aprovar ou rejeitar comentários com base em diretrizes de comunidade.
-* **Destaque Técnico:** Implementação de saídas estritamente determinísticas e isolamento completo de instruções do sistema.
-
-### 2. 💰 Calculadora Inteligente de Reembolsos (`calculadora_reembolso.py`)
-Um motor de auditoria que processa pedidos de reembolso complexos para companhias aéreas, lidando com exceções de negócio (leis de aviação civil, prazos e casos de força maior).
-* **Destaque Técnico:** Uso de **Chain of Thought (Cadeia de Pensamento)** para forçar o modelo a deduzir a lógica antes de emitir um veredito, reduzindo drasticamente alucinações.
-
-### 3. 💬 Chatbot Contínuo com Gestão de Estado (`chat_continuo.py`)
-Simulação de uma interface de chat persistente via terminal que gerencia o fluxo de conversação do utilizador sem perda de contexto.
+![Streamlit Web App](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Gemini API](https://img.shields.io/badge/Model-Gemini%202.5%20Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)
 
 ---
 
-## 🛠️ Competências e Engenharia de Software Aplicada
+## 🎯 Funcionalidades Implementadas
 
-Durante o desenvolvimento deste repositório, foram aplicadas as seguintes boas práticas de engenharia de IA:
-
-* **System Instructions vs. User Prompts:** Arquitetura defensiva que separa as regras imutáveis do sistema (`system_instruction`) dos dados dinâmicos enviados pelo utilizador (`contents`). Esta abordagem blinda as aplicações contra ataques de **Prompt Injection**.
-* **Controle de Temperatura (`temperature=0.0`):** Configuração cirúrgica da criatividade do modelo. Em projetos de auditoria, moderação e estruturação de dados, a temperatura foi travada a zero para garantir respostas matemáticas, consistentes e previsíveis.
-* **Tratamento de Erros e Resiliência (`try/except`):** Código protegido contra falhas de infraestrutura externa (como o erro `503 Service Unavailable`), garantindo que a aplicação falhe de forma elegante sem interromper a execução do utilizador.
-* **Gestão Segura de Credenciais:** Integração com o sistema operativo através da biblioteca `os` para leitura de chaves de API via variáveis de ambiente (`os.environ.get`), seguindo os padrões de segurança contra fuga de segredos (*secret scanning*).
-
----
-
-## 🚀 Tecnologias Utilizadas
-
-* **Linguagem:** Python 3.x
-* **SDK Oficial:** `google-genai`
-* **Modelos de Linguagem:** `gemini-2.5-flash` (Otimizado para baixa latência e alta eficiência de contexto)
-* **Ambiente de Desenvolvimento:** Linux via WSL (Windows Subsystem for Linux) e Git para controlo de versões.
+- **Aplicações Web Interativas (`app.py`):** Interface para atendimento rápido integrada ao Gemini via Streamlit.
+- **Gestão Eficiente de Tokens (`resumidor_curto.py`):** Controle fino de `max_output_tokens` e otimização com `thinking_budget=0` para respostas rápidas e sem cortes.
+- **Sessões e Memória Contínua (`chat_memoria.py`):** Implementação de chat com histórico usando `client.chats.create()`.
+- **RAG & Contexto Estático:** Injeção dinâmica e leitura otimizada de documentos para mitigar alucinações.
+- **Saídas Estruturadas (Structured Outputs):** Respostas em formato estrito de JSON validado via Pydantic.
+- **Engenharia de Prompt:** Aplicação prática de *System Instructions* e *Few-Shot Prompting*.
 
 ---
 
-## 🔧 Como Executar Localmente
+## 🛠️ Tecnologias Utilizadas
 
-1. Clone o repositório:
-   ```bash
-   git clone [https://github.com/Hudsonhiro/API-projects.git](https://github.com/Hudsonhiro/API-projects.git)
-   cd API-projects
+* **Linguagem:** Python 3.10+
+* **Framework Frontend:** Streamlit
+* **SDK LLM:** `google-genai` (Google GenAI SDK)
+* **Ambiente Linux/WSL:** Ubuntu no WSL2
+
+---
+
+## 🚀 Como Executar o Projeto
+
+### 1. Clonar o repositório
+```bash
+git clone [https://github.com/Hudsonhiro/gemini-ai-engineering-hub.git](https://github.com/Hudsonhiro/gemini-ai-engineering-hub.git)
+cd gemini-ai-engineering-hub
