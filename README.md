@@ -1,36 +1,30 @@
 # 🤖 Gemini AI Engineering Hub
 
-Uma suíte completa de aplicações e técnicas de **Engenharia de IA** e integração com **LLMs**, utilizando a SDK oficial da **Google GenAI** e interface gráfica interativa em **Streamlit**.
+Plataforma de aplicações web com IA generativa construída com Python, Streamlit e o SDK oficial da Google GenAI (`google-genai`).
 
-![Streamlit Web App](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Gemini API](https://img.shields.io/badge/Model-Gemini%202.5%20Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)
+🌐 **Acesse a aplicação online:** [https://seu-app.streamlit.app](https://seu-app.streamlit.app) *(substitua pelo seu link real)*
 
 ---
 
-## 🎯 Funcionalidades Implementadas
+## 🛠️ Arquiteturas Implementadas
 
-- **Aplicações Web Interativas (`app.py`):** Interface para atendimento rápido integrada ao Gemini via Streamlit.
-- **Gestão Eficiente de Tokens (`resumidor_curto.py`):** Controle fino de `max_output_tokens` e otimização com `thinking_budget=0` para respostas rápidas e sem cortes.
-- **Sessões e Memória Contínua (`chat_memoria.py`):** Implementação de chat com histórico usando `client.chats.create()`.
-- **RAG & Contexto Estático:** Injeção dinâmica e leitura otimizada de documentos para mitigar alucinações.
-- **Saídas Estruturadas (Structured Outputs):** Respostas em formato estrito de JSON validado via Pydantic.
-- **Engenharia de Prompt:** Aplicação prática de *System Instructions* e *Few-Shot Prompting*.
+1. **💬 Chat Conversacional:** Memória persistente da sessão usando `st.session_state` e `client.chats.create`.
+2. **📄 Analista de Documentos (RAG):** Leitura de arquivos `.txt` com injeção estática de contexto para respostas baseadas no documento.
+3. **📊 Extrator de Dados JSON:** Saídas estruturadas com Pydantic (`BaseModel`, `Field`) e exibição de dados em DataFrame interativo do Pandas.
 
----
+## 🚀 Como Executar Localmente
 
-## 🛠️ Tecnologias Utilizadas
-
-* **Linguagem:** Python 3.10+
-* **Framework Frontend:** Streamlit
-* **SDK LLM:** `google-genai` (Google GenAI SDK)
-* **Ambiente Linux/WSL:** Ubuntu no WSL2
-
----
-
-## 🚀 Como Executar o Projeto
-
-### 1. Clonar o repositório
 ```bash
-git clone [https://github.com/Hudsonhiro/gemini-ai-engineering-hub.git](https://github.com/Hudsonhiro/gemini-ai-engineering-hub.git)
-cd gemini-ai-engineering-hub
+# Clonar o repositório
+git clone [https://github.com/Hudsonhiro/API-projects.git](https://github.com/Hudsonhiro/API-projects.git)
+
+# Acessar a pasta e criar o ambiente virtual
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Instalar dependências
+pip install -r requirements.txt
+
+# Configurar a chave de API e rodar o app
+export GEMINI_API_KEY="SUA_CHAVE_AQUI"
+streamlit run app.py
