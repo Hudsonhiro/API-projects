@@ -8,7 +8,9 @@ st.write("Faça upload de um arquivo `.txt` para conversar com o contexto do doc
 
 @st.cache_resource
 def iniciar_cliente():
-    return genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+    # Tenta buscar das Secrets do Streamlit Cloud; se não achar, busca das variáveis de ambiente locais
+    chave = st.secrets.get("GEMINI_API_KEY") or os.environ.get("GEMINI_API_KEY")
+    return genai.Client(api_key=chave)
 
 client = iniciar_cliente()
 
